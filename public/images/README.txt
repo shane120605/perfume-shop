@@ -1,7 +1,4 @@
-PUT YOUR PERFUME PHOTOS HERE  (folder: public/images)
 
-Export these 5 images from the "Image Assets" section in Figma
-(select the image -> Export -> PNG) and name them EXACTLY:
 
   hero.png         <- "IMG Hero Banner"
   perfume-1.png    <- "IMG Product 1 – Pink Gold"
