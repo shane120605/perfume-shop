@@ -1,0 +1,109 @@
+/* ===== FILE: src/styles/admin.css =====
+   PURPOSE: styles ONLY for the admin pages (A1 - A6): sidebar, top bar, stat cards, tables, forms, chart. */
+
+/* ---------- ADMIN LOGIN (A1) ---------- */
+.admin-login { min-height: 100vh; display: grid; place-items: center; padding: 24px; position: relative; overflow: hidden; background: var(--cream); }
+.admin-login::before, .admin-login::after { content: ''; position: absolute; border-radius: 50%; z-index: 0; }
+.admin-login::before { width: 520px; height: 520px; background: var(--pink); opacity: 0.75; top: -140px; left: -120px; }
+.admin-login::after { width: 560px; height: 560px; background: var(--beige); opacity: 0.75; bottom: -200px; right: -120px; }
+.admin-login__card { position: relative; z-index: 1; width: 100%; max-width: 440px; background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 40px; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 16px; align-items: stretch; text-align: center; }
+.admin-login__card .field { text-align: left; }
+.admin-login__logo { width: 72px; height: 72px; border-radius: 50%; background: var(--pink); display: grid; place-items: center; margin: 0 auto; }
+.admin-login__card h1 { font-size: 34px; font-weight: 600; }
+.admin-login__label { color: var(--rose); font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; }
+.admin-login__back { color: var(--rose); font-size: 13px; font-weight: 500; }
+
+/* ---------- SHELL: sidebar + top bar ---------- */
+.admin { display: grid; grid-template-columns: 260px 1fr; min-height: 100vh; }
+.sidebar { background: #fff; border-right: 1px solid var(--line); padding: 28px 16px; display: flex; flex-direction: column; gap: 6px; position: sticky; top: 0; height: 100vh; }
+.sidebar__logo { display: flex; align-items: center; gap: 10px; padding: 0 8px 24px; }
+.sidebar__logo strong { display: block; font-size: 20px; font-weight: 600; line-height: 1.2; }
+.sidebar__logo small { color: var(--rose); font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; }
+.sidebar__menu { display: flex; flex-direction: column; gap: 6px; flex: 1; }
+.menu-item { display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 10px; border: 0; background: none; width: 100%; text-align: left; font-size: 14px; font-weight: 500; color: var(--ink); }
+.menu-item svg { color: var(--mute); }
+.menu-item:hover { background: var(--pink-l); }
+.menu-item.active { background: var(--pink); color: var(--rose); font-weight: 600; }
+.menu-item.active svg { color: var(--rose); }
+.sidebar__logout { margin-top: auto; }
+.admin__main { display: flex; flex-direction: column; min-width: 0; }
+.topbar { height: 72px; background: #fff; border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; padding: 0 40px; }
+.topbar h1 { font-size: 26px; }
+.topbar__user { display: flex; align-items: center; gap: 10px; font-weight: 500; }
+.avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--pink); color: var(--rose); display: inline-grid; place-items: center; font-size: 13px; font-weight: 600; flex: none; }
+.admin__content { padding: 28px 40px 48px; display: flex; flex-direction: column; gap: 20px; }
+
+/* ---------- DASHBOARD / HEADERS ---------- */
+.page-head { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+.page-head h2 { font-size: 20px; }
+.stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.stat-grid--3 { grid-template-columns: repeat(3, 1fr); }
+.stat-card { display: flex; align-items: center; gap: 16px; padding: 24px; background: #fff; border: 1px solid var(--line); border-radius: 14px; }
+.stat-card--big { background: var(--pink); border-color: var(--pink); }
+.stat-card--big .stat-card__icon { background: #fff; }
+.stat-card__icon { width: 52px; height: 52px; border-radius: 50%; background: var(--pink); display: grid; place-items: center; flex: none; }
+.stat-card small { display: block; color: var(--mute); font-size: 13px; }
+.stat-card strong { display: block; font-size: 28px; font-weight: 500; line-height: 1.2; }
+
+/* ---------- TABLES ---------- */
+.table-card { background: #fff; border: 1px solid var(--line); border-radius: 14px; overflow-x: auto; }
+.table { width: 100%; border-collapse: collapse; min-width: 720px; }
+.table th { background: var(--pink-l); color: var(--rose); font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; text-align: left; padding: 14px 24px; }
+.table td { padding: 12px 24px; border-top: 1px solid var(--line); vertical-align: middle; }
+.table tbody tr:first-child td { border-top: 0; }
+.table tbody tr:hover { background: #fffaf9; }
+.table__thumb { width: 48px; height: 48px; border-radius: 8px; object-fit: cover; }
+.actions { display: flex; align-items: center; gap: 16px; }
+.actions a { display: inline-flex; color: var(--ink); }
+.actions a:hover { color: var(--rose); }
+.person { display: inline-flex; align-items: center; gap: 12px; font-weight: 500; }
+
+/* ---------- FORMS ---------- */
+.form-card { padding: 32px; display: flex; gap: 36px; align-items: flex-start; }
+.form-card--user { flex-direction: column; gap: 18px; max-width: 680px; align-items: stretch; }
+.form-card__image { width: 300px; flex: none; display: flex; flex-direction: column; gap: 10px; }
+.form-card__preview { width: 300px; height: 300px; object-fit: cover; border-radius: 12px; }
+.form-card__fields { flex: 1; display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+.upload-box { height: 300px; border: 2px dashed var(--rose); border-radius: 12px; background: var(--pink-l); display: flex; flex-direction: column; gap: 8px; align-items: center; justify-content: center; color: var(--rose); text-align: center; }
+.upload-box small { color: var(--mute); }
+.upload-btn { cursor: pointer; }
+.form-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 4px; }
+
+/* ---------- VIEW PRODUCT / VIEW ORDER ---------- */
+.view-card { padding: 32px; display: flex; gap: 40px; align-items: flex-start; }
+.view-card__photo { width: 340px; height: 340px; object-fit: cover; border-radius: 14px; flex: none; }
+.view-card__info { display: flex; flex-direction: column; gap: 14px; flex: 1; }
+.view-card__info h2 { font-size: 38px; }
+.facts { display: grid; grid-template-columns: 90px 1fr; gap: 8px 12px; margin: 0; }
+.facts dt { color: var(--mute); font-size: 13px; }
+.facts dd { margin: 0; font-weight: 500; font-size: 13px; }
+.two-panel { display: grid; grid-template-columns: 1fr 380px; gap: 24px; align-items: start; }
+
+/* ---------- SALES REPORT ---------- */
+.date-filter { display: inline-flex; align-items: center; gap: 10px; padding: 6px 14px; background: #fff; border: 1px solid var(--line); border-radius: 8px; }
+.date-filter input { border: 0; font: inherit; font-size: 13px; font-weight: 500; background: transparent; color: var(--ink); }
+.chart-card { gap: 18px; }
+.chart-card__head { display: flex; justify-content: space-between; align-items: center; }
+.bars { display: flex; justify-content: center; align-items: flex-end; gap: clamp(20px, 6vw, 90px); height: 250px; border-bottom: 1px solid var(--line); padding-bottom: 0; overflow-x: auto; }
+.bars__col { display: flex; flex-direction: column; align-items: center; gap: 8px; width: 72px; flex: none; position: relative; }
+.bars__col small { font-size: 12px; font-weight: 600; color: var(--mute); }
+.bars__col span { position: absolute; bottom: -28px; font-size: 12px; color: var(--mute); white-space: nowrap; }
+.bars__bar { width: 72px; background: var(--pink-d); border-radius: 8px 8px 0 0; }
+.bars__bar--top { background: var(--rose); }
+.chart-card .bars { margin-bottom: 28px; }
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 1100px) {
+  .admin { grid-template-columns: 200px 1fr; }
+  .stat-grid { grid-template-columns: repeat(2, 1fr); }
+  .form-card, .view-card { flex-direction: column; }
+  .two-panel { grid-template-columns: 1fr; }
+}
+@media (max-width: 760px) {
+  .admin { grid-template-columns: 1fr; }
+  .sidebar { position: static; height: auto; }
+  .sidebar__menu { flex-direction: row; flex-wrap: wrap; }
+  .menu-item { width: auto; }
+  .admin__content, .topbar { padding-left: 16px; padding-right: 16px; }
+  .stat-grid, .stat-grid--3 { grid-template-columns: 1fr; }
+}
